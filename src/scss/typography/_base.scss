@@ -1,0 +1,58 @@
+/*
+ * BASE TYPOGRAPHY
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic");
+
+html {
+	font-size: $font_size;
+	line-height: $line_height_root;
+	font-family: Merriweather, Georgia, serif;;
+	color: $color_font_body;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+
+	@include breakpoint($bp_m) {
+		font-size: $font_size_m;
+	}
+}
+
+// Font size
+h1 {
+	font-size: $font_size_h1;
+	line-height: $line_height_headings;
+
+	@include breakpoint($bp_s) {
+		font-size: $font_size_h1_s;
+	}
+
+	@include breakpoint($bp_m) {
+		font-size: $font_size_h1_m;
+	}
+}
+
+h1,
+p {
+	margin-bottom: $base_x2;
+
+	@include breakpoint($bp_m) {
+		margin-bottom: $base_x4;
+	}
+}
+
+header {
+	font-size: $font_size_header;
+}
+
+.hero-caption {
+	
+	p {
+		@include breakpoint($bp_s) {
+			font-size: $font_size_caption_s;
+		}
+
+		@include breakpoint($bp_m) {
+			font-size: $font_size_caption_m;
+		}
+	}	
+}

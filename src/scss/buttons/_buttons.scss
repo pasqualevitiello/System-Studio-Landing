@@ -1,0 +1,16 @@
+/*
+ * BUTTONS
+ */
+
+.button {
+	display: inline-block;
+	font-size: $font_size_buttons;
+	line-height: 1;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #FFF;
+	background: $color_primary;
+	padding: $base_x2;
+	border-radius: 4px;
+}

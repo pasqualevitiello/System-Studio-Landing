@@ -1,0 +1,17 @@
+/*
+ * STRUCTURE 
+ */
+
+.container {
+	position: relative;
+	width: 100%;
+	max-width: $width_l;
+	margin: 0 auto;
+	padding-left: $base_x2;
+	padding-right: $base_x2;
+
+	@include breakpoint($bp_s) {
+		padding-left: $base_x4;
+		padding-right: $base_x4;
+	}
+}

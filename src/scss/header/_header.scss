@@ -1,0 +1,13 @@
+/*
+ * HEADER
+ */
+
+header {
+ 	padding-top: $base_x2;
+ 	padding-bottom: $base_x2;
+
+	@include breakpoint($bp_s) {
+		padding-top: $base_x4;
+		padding-bottom: $base_x4;
+	} 	
+}
