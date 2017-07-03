@@ -25,3 +25,13 @@
 	height: 100%;
 	overflow: hidden;
 }
+
+.gradient {
+	position: absolute;
+	top: 35%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -2;
+	background: linear-gradient(rgba( 255, 255, 255,0 ), #D4EFFA);
+}

@@ -86,8 +86,7 @@ particlesJS("particles", {
       },
       "bubble": {
         "distance": 500,
-        //"size": 9,
-        "size": 10,
+        "size": 9,
         "duration": 2,
         //"speed": 3
       },
