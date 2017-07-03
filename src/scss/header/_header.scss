@@ -3,11 +3,62 @@
  */
 
 header {
+	@extend %clearfix;
  	padding-top: $base_x2;
  	padding-bottom: $base_x2;
 
 	@include breakpoint($bp_s) {
 		padding-top: $base_x4;
 		padding-bottom: $base_x4;
-	} 	
+	}
+
+	@include breakpoint($bp_m) {
+		padding-top: $base_x8;
+		padding-bottom: $base_x8;
+	}
+
+	// Vertical centering header elements
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.site-logo {
+	float: left;
+}
+
+.header-links {
+	float: right;
+
+	li {
+		display: inline;
+
+		+ li {
+
+			&::before {
+				content: ' / ';
+				color: $color_grey_mid;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		border-bottom: none;
+		text-transform: uppercase;
+	}
+
+	.dribbble a {
+		color: #FD8D9C;
+	}
+
+	.twitter a {
+		color: #8FD4F3;
+	}
+
+	.contact a {
+		color: #5A8EEA;
+	}
 }
