@@ -27,6 +27,10 @@ header {
 
 .site-logo {
 	float: left;
+
+	a {
+		border-bottom: none;
+	}
 }
 
 .header-links {
