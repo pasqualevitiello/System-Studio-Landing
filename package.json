@@ -6,7 +6,7 @@
   "author": "Pasquale Vitiello http://pasqualevitiello.com/",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/pasquale_vitiello/system-studio-landing"
+    "url": "https://github.com/pasqualevitiello/System-Studio-Landing"
   },
   "scripts": {
     "clean": "rimraf dist/{css/*,js/*}",
