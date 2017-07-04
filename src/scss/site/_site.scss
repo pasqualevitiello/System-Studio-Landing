@@ -2,17 +2,21 @@
  * SITE 
  */
 
-// .landing-wrapper {
-// 	display: flex;
-// 	flex-direction: column;
+.landing-wrapper {
+	position: relative;
+}
 
-// 	> * {
-// 		flex: 1;
-// 		display: flex;
-// 		flex-direction: column;
-// 		justify-content: center;
-// 	}
-// }
+.hero {
+ 	padding-bottom: $base_x2;
+
+	@include breakpoint($bp_s) {
+		padding-bottom: $base_x4;
+	}
+
+	@include breakpoint($bp_m) {
+		padding-bottom: $base_x8;
+	}
+}
 
 .particles-container {
 	position: absolute;

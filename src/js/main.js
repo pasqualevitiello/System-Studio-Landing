@@ -1,3 +1,75 @@
+(function($) {
+  "use strict";
+
+  window.sys = {};
+  sys.modules = {};
+
+  sys.window = $(window);
+  sys.document = $(document);
+  sys.windowWidth = $(window).width();
+  sys.windowHeight = $(window).height();
+  sys.body = $('body');
+  sys.html = $('html, body');
+  sys.htmlEl = $('html');
+  sys.landing = $('.landing-wrapper');
+  sys.landingHeight = sys.landing.outerHeight(true);
+
+  sys.sysOnDocumentReady = sysOnDocumentReady;
+  sys.sysOnWindowLoad = sysOnWindowLoad;
+  sys.sysOnWindowResize = sysOnWindowResize;
+  sys.sysOnWindowScroll = sysOnWindowScroll;
+
+  $(document).ready(sysOnDocumentReady);
+  $(window).load(sysOnWindowLoad);
+  $(window).resize(sysOnWindowResize);
+  $(window).scroll(sysOnWindowScroll);
+
+  /* 
+   *  All functions to be called on $(document).ready() should be in this function
+   */
+  function sysOnDocumentReady() {
+    landingCalcHeights();
+  }
+
+  /* 
+   *  All functions to be called on $(window).load() should be in this function
+   */
+  function sysOnWindowLoad() {
+  }
+
+  /* 
+   *  All functions to be called on $(window).resize() should be in this function
+   */
+  function sysOnWindowResize() {
+    sys.windowWidth = $(window).width();
+    sys.windowHeight = $(window).height();
+    landingCalcHeights();
+  }
+
+  /* 
+   *  All functions to be called on $(window).scroll() should be in this function
+   */
+  function sysOnWindowScroll() {
+    sys.scroll = $(window).scrollTop();
+  }
+
+  /* 
+   *  Handle the hero position
+   */
+  function landingCalcHeights() {
+    if ( sys.landing ) {
+      if( sys.landingHeight < sys.windowHeight ) { // da fixare: prova il resize verticale e capisci perché
+        sys.headerHeight = $('header').height();
+        sys.landing.css( 'top', ( ( sys.windowHeight - sys.landingHeight ) / 2 ) - sys.headerHeight );
+      } else {
+        sys.landing.css( 'top', 0 );
+      }
+    }
+  }
+
+})(jQuery);
+
+
 /* ---- particles.js config ---- */
 
 particlesJS("particles", {
