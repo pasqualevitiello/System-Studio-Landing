@@ -22,6 +22,7 @@ html {
 h1 {
 	font-family: nimbus-sans, sans-serif;
 	font-size: $font_size_h1;
+	font-weight: bold;
 	line-height: $line_height_headings;
 
 	@include breakpoint($bp_s) {
