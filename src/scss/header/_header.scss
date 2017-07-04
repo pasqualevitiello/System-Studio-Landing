@@ -29,7 +29,12 @@ header {
 	float: left;
 
 	a {
+		display: block;
 		border-bottom: none;
+
+		img {
+			display: block;
+		}
 	}
 }
 
