@@ -2,12 +2,13 @@
  * BASE TYPOGRAPHY
  */
 
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic");
+//@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic");
 
 html {
 	font-size: $font_size;
 	line-height: $line_height_root;
-	font-family: Merriweather, Georgia, serif;;
+	//font-family: Merriweather, Georgia, serif;
+	font-family: freight-text-pro, serif;
 	color: $color_font_body;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -19,6 +20,7 @@ html {
 
 // Font size
 h1 {
+	font-family: nimbus-sans, sans-serif;
 	font-size: $font_size_h1;
 	line-height: $line_height_headings;
 
