@@ -11,6 +11,8 @@
   sys.body = $('body');
   sys.html = $('html, body');
   sys.htmlEl = $('html');
+  sys.header = $('header');
+  sys.headerHeight = sys.header.outerHeight(true);
   sys.landing = $('.landing-wrapper');
   sys.landingHeight = sys.landing.outerHeight(true);
 
@@ -43,6 +45,8 @@
   function sysOnWindowResize() {
     sys.windowWidth = $(window).width();
     sys.windowHeight = $(window).height();
+    sys.headerHeight = sys.header.outerHeight(true);
+    sys.landingHeight = sys.landing.outerHeight(true);
     landingCalcHeights();
   }
 
@@ -59,8 +63,7 @@
   function landingCalcHeights() {
     if ( sys.landing ) {
       if( sys.landingHeight < sys.windowHeight ) { // da fixare: prova il resize verticale e capisci perché
-        sys.headerHeight = $('header').height();
-        sys.landing.css( 'top', ( ( sys.windowHeight - sys.landingHeight ) / 2 ) - sys.headerHeight );
+        sys.landing.css( 'top', ( ( sys.windowHeight - sys.landingHeight ) / 2 ) - ( sys.headerHeight / 2) );
       } else {
         sys.landing.css( 'top', 0 );
       }
