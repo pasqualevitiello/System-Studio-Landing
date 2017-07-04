@@ -9,6 +9,7 @@ html {
 	color: $color_font_body;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
 
 	@include breakpoint($bp_m) {
 		font-size: $font_size_m;
