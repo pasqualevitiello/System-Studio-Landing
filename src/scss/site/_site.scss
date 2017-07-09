@@ -2,7 +2,73 @@
  * SITE 
  */
 
+// Loader screen
+.system-loader {
+	display: block;
+
+	.is-intro-animation-complete & {
+		display: none;
+	}
+}
+
+.system-loader-container {
+	position: absolute;
+	top: calc(50% - 50px);
+	left: calc(50% - 52px);
+
+	svg {
+		margin-top: 40px;
+	}
+}
+
+.system-loader-logo {
+	display: block;
+	height: 100px;
+	width: 104px;
+	transform: rotateZ(-45deg);
+
+	.is-loading & {
+		display: none;
+	}
+
+	.block-middle,    
+	.block-left,
+	.block-right {
+		display: block;
+		position: absolute;
+	}
+
+	.block-middle {
+		height: 100px;
+		width: 40px;
+		left: 32px;
+		background: linear-gradient(#4D81EA, #2261E4);
+	}
+
+	.block-left,
+	.block-right {
+		height: 72px;
+		width: 32px;
+	}
+
+	.block-left {
+		right: 72px;
+		bottom: 0;
+		transform-origin: 100% 72px;
+		background: linear-gradient(#28354F, #37496F);
+	}
+
+	.block-right {
+		left: 72px;
+		top: 0;
+		transform-origin: 0 0;
+		background: linear-gradient(#51BBEE, #80CDF2);
+	}
+}
+
+// Landing wrapper
 .landing-wrapper {
+	display: none;
 	position: relative;
  	padding-top: $base_x2;
  	padding-bottom: $base_x2;
@@ -16,8 +82,13 @@
 		padding-top: $base_x8;
 		padding-bottom: $base_x8;
 	}
+
+	.is-intro-animation-complete & {
+		display: block;
+	}
 }
 
+// Particles container
 .particles-container {
 	position: absolute;
 	top: 0;
@@ -30,6 +101,7 @@
 	overflow: hidden;
 }
 
+// Gradient
 .gradient {
 	position: absolute;
 	top: 35%;
