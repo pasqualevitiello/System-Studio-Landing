@@ -186,7 +186,6 @@
         if ( sys.landing ) {
             if( sys.landingHeight < sys.windowHeight ) { // da fixare: prova il resize verticale e capisci perché
                 sys.landing.css( 'top', ( ( sys.windowHeight - sys.landingHeight ) / 2 ) - ( sys.headerHeight / 2 ) );
-                console.log(sys.landingHeight);
             } else {
                 sys.landing.css( 'top', 0 );
             }
