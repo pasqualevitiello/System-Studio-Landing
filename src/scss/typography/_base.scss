@@ -5,7 +5,7 @@
 html {
 	font-size: $font_size;
 	line-height: $line_height_root;
-	font-family: $font_family_sans;
+	font-family: futura-pt, sans-serif;
 	color: $color_font_body;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -18,7 +18,6 @@ html {
 
 // Font size
 h1 {
-	font-family: nimbus-sans, sans-serif;
 	font-size: $font_size_h1;
 	font-weight: bold;
 	letter-spacing: -1px;
@@ -31,10 +30,6 @@ h1 {
 	@include breakpoint($bp_m) {
 		font-size: $font_size_h1_m;
 	}
-}
-
-p {
-	font-family: $font_family_serif;	
 }
 
 h1,
