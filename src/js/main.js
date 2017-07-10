@@ -134,11 +134,11 @@
             left: 72,
             opacity: 1,
             ease: Expo.easeOut,
-            onComplete: logoOuAnimationt
+            onComplete: logoOuAnimation
         }, '-=.8' )
     }
 
-    function logoOuAnimationt() {
+    function logoOuAnimation() {
         var logoOut = new TimelineMax();
 
         // Progressive states
