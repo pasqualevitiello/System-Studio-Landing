@@ -45,17 +45,20 @@ p {
 
 header {
 	font-size: $font_size_header;
+	letter-spacing: 1px;
 }
 
-.hero-caption {
+.hero-paragraph {
 	
-	p {
-		@include breakpoint($bp_s) {
-			font-size: $font_size_caption_s;
-		}
+	@include breakpoint($bp_s) {
+		font-size: $font_size_caption_s;
+	}
 
-		@include breakpoint($bp_m) {
-			font-size: $font_size_caption_m;
-		}
-	}	
+	@include breakpoint($bp_m) {
+		font-size: $font_size_caption_m;
+	}
+
+	> p:first-child {
+		margin-bottom: 0;
+	}
 }

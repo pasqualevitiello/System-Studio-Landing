@@ -47,6 +47,7 @@ header {
 			&::before {
 				content: ' / ';
 				color: $color_grey_mid;
+				margin: 0 $base_d2;
 			}
 		}
 	}
