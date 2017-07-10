@@ -4,14 +4,14 @@
 
 header {
 	@extend %clearfix;
- 	padding-bottom: $base_x2;
+ 	padding-bottom: $base;
 
 	@include breakpoint($bp_s) {
-		padding-bottom: $base_x4;
+		padding-bottom: $base_x2;
 	}
 
 	@include breakpoint($bp_m) {
-		padding-bottom: $base_x8;
+		padding-bottom: $base_x4;
 	}
 
 	// Vertical centering header elements
@@ -31,7 +31,14 @@ header {
 
 		img {
 			display: block;
-			height: 80px;
+
+			@include breakpoint($bp_s) {
+				height: 68px;
+			}
+
+			@include breakpoint($bp_m) {
+				height: 80px;
+			}
 		}
 	}
 }
