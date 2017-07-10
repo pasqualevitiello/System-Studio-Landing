@@ -4,8 +4,10 @@
 
 html {
 	font-size: $font_size;
+	font-weight: 400;
 	line-height: $line_height_root;
-	font-family: futura-pt, sans-serif;
+	letter-spacing: -1px;
+	font-family: futura, sans-serif;
 	color: $color_font_body;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -19,9 +21,9 @@ html {
 // Font size
 h1 {
 	font-size: $font_size_h1;
-	font-weight: bold;
-	letter-spacing: -1px;
+	font-weight: 500;
 	line-height: $line_height_headings;
+	letter-spacing: -0.6px;
 
 	@include breakpoint($bp_s) {
 		font-size: $font_size_h1_s;
