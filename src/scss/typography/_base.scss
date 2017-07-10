@@ -45,9 +45,12 @@ p {
 
 header {
 	font-family: europa, sans-serif;
-	font-weight: 700;
 	font-size: $font_size_header;
 	letter-spacing: 1px;
+
+	a {
+		font-weight: 700;
+	}
 }
 
 .hero-paragraph {
