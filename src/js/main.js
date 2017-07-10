@@ -1,5 +1,4 @@
-(function($) {
-
+(function ($) {
     "use strict";
 
     window.sys = {};
@@ -68,6 +67,8 @@
         sys.loaderLeft = sys.loaderLogo.children('.block-left');
         sys.loaderRight = sys.loaderLogo.children('.block-right');
         sys.loaderMiddle = sys.loaderLogo.children('.block-middle');
+        sys.staggeringEls = sys.landing.find('.staggering-elem');
+        sys.body.addClass('is-intro-animation-running');
         logoIntroAnimation();
     }
 
@@ -83,6 +84,12 @@
                 rotation: 315,
                 y: 0,
                 opacity: 1,
+            }) 
+            .set( sys.staggeringEls,
+            {
+                display: 'none',
+                y: sys.windowHeight,
+                opacity: 0,
             }) 
             .set( sys.loaderLeft,
             {
@@ -134,21 +141,41 @@
             left: 72,
             opacity: 1,
             ease: Expo.easeOut,
-            onComplete: logoOuAnimation
+            onComplete: logoOutAnimation
         }, '-=.8' )
     }
 
-    function logoOuAnimation() {
+    function logoOutAnimation() {
         var logoOut = new TimelineMax();
 
         // Progressive states
         logoOut
             .to( sys.loaderLogo, 1.5,
             {
-                y: -150,
+                y: -sys.windowHeight,
                 opacity: 0,
                 ease: Expo.easeInOut,
+                onStart: landingInAnimation,
             })
+    }
+
+    function landingInAnimation() {
+        var landingIn = new TimelineMax();
+
+        // Stagger from
+        landingIn
+            .staggerTo( sys.staggeringEls, 1.5,
+            {
+                display: 'block',
+                y: 0,
+                opacity: 1,
+                ease: Expo.easeInOut,
+                //delay: .2,
+            }, .05, "+=0", handleAnimClasses )
+    }
+
+    function handleAnimClasses() {
+        sys.body.removeClass('is-intro-animation-running').addClass('is-intro-animation-complete')
     }
 
 

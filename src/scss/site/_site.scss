@@ -2,6 +2,10 @@
  * SITE 
  */
 
+.is-intro-animation-running {
+ 	overflow: hidden;
+}
+
 // Loader screen
 .system-loader {
 	display: block;
@@ -68,7 +72,7 @@
 
 // Landing wrapper
 .landing-wrapper {
-	display: none;
+	//display: none;
 	position: relative;
  	padding-top: $base_x2;
  	padding-bottom: $base_x2;
