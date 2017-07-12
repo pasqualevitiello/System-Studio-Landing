@@ -170,8 +170,7 @@
                 y: 0,
                 opacity: 1,
                 ease: Expo.easeInOut,
-                //delay: .2,
-            }, .05, "+=0", handleAnimClasses )
+            }, .05, 0, handleAnimClasses )
     }
 
     function handleAnimClasses() {
