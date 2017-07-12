@@ -72,7 +72,6 @@
 
 // Landing wrapper
 .landing-wrapper {
-	//display: none;
 	position: relative;
  	padding-top: $base_x2;
  	padding-bottom: $base_x2;
@@ -87,8 +86,8 @@
 		padding-bottom: $base_x8;
 	}
 
-	.is-intro-animation-complete & {
-		display: block;
+	.is-loading & {
+		display: none;
 	}
 }
 
