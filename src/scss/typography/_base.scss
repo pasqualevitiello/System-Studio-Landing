@@ -48,16 +48,17 @@ header {
 	font-size: $font_size_header;
 	letter-spacing: 1px;
 
+	@include breakpoint($bp_s) {
+		font-size: $font_size_header_s;
+	}
+
 	a {
 		font-weight: 700;
 	}
 }
 
 .hero-paragraph {
-	
-	@include breakpoint($bp_s) {
-		font-size: $font_size_caption_s;
-	}
+	font-size: $font_size_caption_s;
 
 	@include breakpoint($bp_m) {
 		font-size: $font_size_caption_m;
