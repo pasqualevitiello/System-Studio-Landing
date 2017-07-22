@@ -6,7 +6,7 @@ header {
 	@extend %clearfix;
  	padding-bottom: $base_x4;
 
-	@include breakpoint($bp_m) {
+	@include breakpoint($bp_l) {
 		padding-bottom: $base_x8;
 	}
 

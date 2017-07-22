@@ -13,8 +13,8 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 
-	@include breakpoint($bp_m) {
-		font-size: $font_size_m;
+	@include breakpoint($bp_l) {
+		font-size: $font_size_l;
 	}
 }
 
@@ -29,8 +29,8 @@ h1 {
 		font-size: $font_size_h1_s;
 	}
 
-	@include breakpoint($bp_m) {
-		font-size: $font_size_h1_m;
+	@include breakpoint($bp_l) {
+		font-size: $font_size_h1_l;
 	}
 }
 
@@ -39,7 +39,7 @@ p {
 	margin-bottom: $base_x4;
 
 
-	@include breakpoint($bp_m) {
+	@include breakpoint($bp_l) {
 		margin-bottom: $base_x8;
 	}
 }
@@ -61,8 +61,8 @@ header {
 .hero-paragraph {
 	font-size: $font_size_caption_s;
 
-	@include breakpoint($bp_m) {
-		font-size: $font_size_caption_m;
+	@include breakpoint($bp_l) {
+		font-size: $font_size_caption_l;
 	}
 
 	> p:first-child {

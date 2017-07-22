@@ -81,7 +81,7 @@
 		padding-bottom: $base_x4;
 	}
 
-	@include breakpoint($bp_m) {
+	@include breakpoint($bp_l) {
 		padding-top: $base_x8;
 		padding-bottom: $base_x8;
 	}
@@ -89,15 +89,4 @@
 	.is-loading & {
 		display: none;
 	}
-}
-
-// Gradient
-.gradient {
-	position: absolute;
-	top: 35%;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: -2;
-	background: linear-gradient(rgba( 255, 255, 255,0 ), #D4EFFA);
 }
