@@ -90,3 +90,31 @@
 		display: none;
 	}
 }
+
+// Landing video bg
+.video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	//opacity: .1;
+
+	.is-loading & {
+		display: none;
+	}
+
+	.landing-bg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: 100%;
+
+	}
+
+	.poster.hidden {
+		display: none;
+	}
+}

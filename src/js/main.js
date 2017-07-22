@@ -15,6 +15,10 @@
     sys.headerHeight = sys.header.outerHeight(true);
     sys.landing = $('.landing-wrapper');
     sys.landingHeight = sys.landing.outerHeight(true);
+    sys.videoBg = $('.landing-bg');
+    sys.videoBgWOrig = 1920;
+    sys.videoBgHOrig = 1080;
+    sys.posterBg = $('.poster');
 
     sys.sysOnDocumentReady = sysOnDocumentReady;
     sys.sysOnWindowLoad = sysOnWindowLoad;
@@ -31,6 +35,7 @@
      */
     function sysOnDocumentReady() {
         landingCalcHeights();
+        videoBgSize();
     }
 
     /* 
@@ -39,6 +44,7 @@
     function sysOnWindowLoad() {
         sys.body.removeClass('is-loading');
         systemLoader();
+        sys.posterBg.addClass('hidden');
     }
 
     /* 
@@ -50,6 +56,7 @@
         sys.headerHeight = sys.header.outerHeight(true);
         sys.landingHeight = sys.landing.outerHeight(true);
         landingCalcHeights();
+        videoBgSize();
     }
 
     /* 
@@ -188,6 +195,22 @@
             } else {
                 sys.landing.css( 'top', 0 );
             }
+        }
+    }
+
+    /* 
+     *  Scale background video
+     */
+    function videoBgSize() {
+        if ( sys.landing ) {
+            // use largest scale factor of horizontal/vertical
+            var scale_w = sys.windowWidth / sys.videoBgWOrig;
+            var scale_h = sys.windowHeight / sys.videoBgHOrig;
+            var scale = scale_w > scale_h ? scale_w : scale_h;
+              
+            // scale video and poster
+            sys.videoBg.width( scale * sys.videoBgWOrig );
+            sys.videoBg.height( scale * sys.videoBgHOrig );
         }
     }
 
