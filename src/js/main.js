@@ -44,8 +44,6 @@
      */
     function sysOnWindowLoad() {
         console.log('loaded');
-        sys.body.removeClass('is-loading');
-        systemLoader();
         sys.posterBg.addClass('hidden');
     }
 
@@ -53,6 +51,8 @@
      *  All functions to be called on $(window).resize() should be in this function
      */
     function sysOnWindowResize() {
+        sys.body.removeClass('is-loading');
+        systemLoader();
         sys.windowWidth = $(window).width();
         sys.windowHeight = $(window).height();
         sys.headerHeight = sys.header.outerHeight(true);
