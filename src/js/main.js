@@ -34,6 +34,7 @@
      *  All functions to be called on $(document).ready() should be in this function
      */
     function sysOnDocumentReady() {
+        console.log('ready');
         landingCalcHeights();
         videoBgSize();
     }
@@ -42,6 +43,7 @@
      *  All functions to be called on $(window).load() should be in this function
      */
     function sysOnWindowLoad() {
+        console.log('loaded');
         sys.body.removeClass('is-loading');
         systemLoader();
         sys.posterBg.addClass('hidden');
