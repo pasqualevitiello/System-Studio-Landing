@@ -36,10 +36,11 @@ h1 {
 
 h1,
 p {
-	margin-bottom: $base_x2;
+	margin-bottom: $base_x4;
+
 
 	@include breakpoint($bp_m) {
-		margin-bottom: $base_x4;
+		margin-bottom: $base_x8;
 	}
 }
 
