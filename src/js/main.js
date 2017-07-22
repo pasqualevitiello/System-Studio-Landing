@@ -35,18 +35,16 @@
      *  All functions to be called on $(document).ready() should be in this function
      */
     function sysOnDocumentReady() {
-        console.log('ready');
         sys.body.removeClass('is-loading');
         systemLoader();
         landingCalcHeights();
+        videoBgSize();
     }
 
     /* 
      *  All functions to be called on $(window).load() should be in this function
      */
     function sysOnWindowLoad() {
-        console.log('loaded');
-        videoBgSize();
     }
 
     /* 
@@ -57,6 +55,8 @@
         sys.windowHeight = $(window).height();
         sys.headerHeight = sys.header.outerHeight(true);
         sys.landingHeight = sys.landing.outerHeight(true);
+        landingCalcHeights();
+        videoBgSize();
     }
 
     /* 
@@ -191,7 +191,8 @@
      */
     function landingCalcHeights() {
         if ( sys.landing ) {
-            if( sys.landingHeight < sys.windowHeight ) { // da fixare: prova il resize verticale e capisci perché
+            sys.headerHeight = sys.header.outerHeight(true); // update var
+            if( ( sys.landingHeight + sys.headerHeight ) < sys.windowHeight ) {
                 sys.landing.css( 'top', ( ( sys.windowHeight - sys.landingHeight ) / 2 ) - ( sys.headerHeight / 2 ) );
             } else {
                 sys.landing.css( 'top', 0 );
@@ -216,7 +217,6 @@
 
             var video = document.getElementById('bg-video');
             video.onloadedmetadata = function() {
-                console.log('yep');
                 sys.videoContainer.addClass('has-loaded');
             };
         }
