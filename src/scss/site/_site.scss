@@ -26,13 +26,13 @@
 }
 
 .system-loader-logo {
-	display: block;
+	display: none;
 	height: 100px;
 	width: 104px;
 	transform: rotateZ(-45deg);
 
-	.is-loading & {
-		display: none;
+	&.is-ready {
+		display: block;
 	}
 
 	.block-middle,    
@@ -99,10 +99,13 @@
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
-	//opacity: .1;
+	opacity: 0;
+	visibility: hidden;
 
-	.is-loading & {
-		display: none;
+	.is-intro-animation-complete & {
+		opacity: .1;
+		visibility: visible;
+		transition: all 1s;
 	}
 
 	.landing-bg {
@@ -111,10 +114,20 @@
 		left: 50%;
 		transform: translateX(-50%) translateY(-50%);
 		width: 100%;
-
 	}
 
-	.poster.hidden {
+	video {
 		display: none;
+	}
+
+	&.has-loaded {
+
+		.poster {
+			display: none;
+		}
+
+		video {
+			display: block;
+		}
 	}
 }

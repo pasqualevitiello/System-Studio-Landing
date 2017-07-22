@@ -15,7 +15,8 @@
     sys.headerHeight = sys.header.outerHeight(true);
     sys.landing = $('.landing-wrapper');
     sys.landingHeight = sys.landing.outerHeight(true);
-    sys.videoBg = $('.landing-bg');
+    sys.videoContainer = $('.video-container');
+    sys.videoBg = sys.videoContainer.find('.landing-bg');
     sys.videoBgWOrig = 1920;
     sys.videoBgHOrig = 1080;
     sys.posterBg = $('.poster');
@@ -35,8 +36,9 @@
      */
     function sysOnDocumentReady() {
         console.log('ready');
+        sys.body.removeClass('is-loading');
+        systemLoader();
         landingCalcHeights();
-        videoBgSize();
     }
 
     /* 
@@ -44,21 +46,17 @@
      */
     function sysOnWindowLoad() {
         console.log('loaded');
-        sys.posterBg.addClass('hidden');
+        videoBgSize();
     }
 
     /* 
      *  All functions to be called on $(window).resize() should be in this function
      */
     function sysOnWindowResize() {
-        sys.body.removeClass('is-loading');
-        systemLoader();
         sys.windowWidth = $(window).width();
         sys.windowHeight = $(window).height();
         sys.headerHeight = sys.header.outerHeight(true);
         sys.landingHeight = sys.landing.outerHeight(true);
-        landingCalcHeights();
-        videoBgSize();
     }
 
     /* 
@@ -77,6 +75,7 @@
         sys.loaderRight = sys.loaderLogo.children('.block-right');
         sys.loaderMiddle = sys.loaderLogo.children('.block-middle');
         sys.staggeringEls = sys.landing.find('.staggering-elem');
+        sys.loaderLogo.addClass('is-ready');
         sys.body.addClass('is-intro-animation-running');
         logoIntroAnimation();
     }
@@ -205,6 +204,7 @@
      */
     function videoBgSize() {
         if ( sys.landing ) {
+
             // use largest scale factor of horizontal/vertical
             var scale_w = sys.windowWidth / sys.videoBgWOrig;
             var scale_h = sys.windowHeight / sys.videoBgHOrig;
@@ -213,6 +213,12 @@
             // scale video and poster
             sys.videoBg.width( scale * sys.videoBgWOrig );
             sys.videoBg.height( scale * sys.videoBgHOrig );
+
+            var video = document.getElementById('bg-video');
+            video.onloadedmetadata = function() {
+                console.log('yep');
+                sys.videoContainer.addClass('has-loaded');
+            };
         }
     }
 
