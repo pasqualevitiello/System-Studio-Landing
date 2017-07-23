@@ -97,10 +97,11 @@
 	opacity: 0;
 	visibility: hidden;
 
+	.is-intro-animation-completing &,
 	.is-intro-animation-complete & {
 		opacity: .1;
 		visibility: visible;
-		transition: all 1s;
+		transition: all 5s;
 	}
 
 	.landing-bg {

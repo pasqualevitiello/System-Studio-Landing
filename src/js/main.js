@@ -36,8 +36,8 @@
      */
     function sysOnDocumentReady() {
         sys.body.removeClass('is-loading');
-        systemLoader();
         landingCalcHeights();
+        systemLoader();
         videoBgSize();
     }
 
@@ -90,13 +90,12 @@
             {
                 scale: 0,
                 rotation: 315,
-                y: 0,
                 opacity: 1,
             }) 
             .set( sys.staggeringEls,
             {
                 display: 'none',
-                y: sys.windowHeight,
+                y: '-=10',
                 opacity: 0,
             }) 
             .set( sys.loaderLeft,
@@ -160,29 +159,28 @@
         logoOut
             .to( sys.loaderLogo, 1.5,
             {
-                y: -sys.windowHeight,
                 opacity: 0,
-                ease: Expo.easeInOut,
+                scale: 1.1,
+                ease: Expo.easeOut,
                 onStart: landingInAnimation,
             })
     }
 
     function landingInAnimation() {
+        sys.body.addClass('is-intro-animation-completing');
         var landingIn = new TimelineMax();
 
         // Stagger from
         landingIn
-            .staggerTo( sys.staggeringEls, 1.5,
+            .staggerTo( sys.staggeringEls, 5,
             {
                 display: 'block',
                 y: 0,
                 opacity: 1,
-                ease: Expo.easeInOut,
-            }, .1, 0, handleAnimClasses )
-    }
-
-    function handleAnimClasses() {
-        sys.body.removeClass('is-intro-animation-running').addClass('is-intro-animation-complete');
+                delay: .25,
+                ease: Expo.easeOut,
+                onComplete: sys.body.removeClass('is-intro-animation-running is-intro-animation-completing').addClass('is-intro-animation-complete');
+            }, .25 );
     }
 
 
